@@ -5,8 +5,9 @@ const sleep = (waitTimeInMs) => new Promise(resolve => setTimeout(resolve, waitT
 
 
 app.get('/', (req, res) => { 
+     let pause = randomIntInc(1,5000);
      sleep(randomIntInc(1,5000)).then(() => {
-          res.json({name: 'server nodejs'});
+          res.json({"name": 'server nodejs', "wait_time(ms)":pause});
      });
 });
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-time_response=$(curl -o /dev/null -L -qs -w "%{time_total}" www.uptc.edu.co)
-time_required=1.4
+time_response=$(curl -o /dev/null -L -qs -w "%{time_total}" http://192.168.100.136:3000)
+time_required=3.5
 echo $time_required
 echo $time_response
 
@@ -13,7 +13,7 @@ else
      echo "conectando a servidor de forma remota..."
      sleep 2
      echo "bajando ultima actualizacion del proyecto..."
-     sshpass -p '1234567' ssh -o StrictHostKeyChecking=no server1@192.168.100.136 'cd lab1/Availability;git pull'
+     sshpass -p '1234567' ssh -o StrictHostKeyChecking=no server1@192.168.100.136 'cd lab1/Availability;git pull;pm2 restart server.js'
 fi
 
 

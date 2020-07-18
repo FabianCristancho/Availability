@@ -6,7 +6,7 @@
 echo "conectando a servidor de forma remota..."
 sleep 2
 echo "bajando ultima actualizacion del proyecto..."
-sshpass -p '1234567' ssh -o StrictHostKeyChecking=no server1@192.168.100.136 'cd lab1/Availability;git pull'
+sshpass -p '1234567' ssh -o StrictHostKeyChecking=no server1@192.168.100.136 'cd lab1/Availability;git pull;pm2 restart server.js'
 
 
 
